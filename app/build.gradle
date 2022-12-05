@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs'
-
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -54,4 +54,25 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // ViewModel
+    def lifecycle_version = "2.5.0-alpha02"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    def koin_version= "3.2.2"
+    // Koin Core features
+    implementation "io.insert-koin:koin-core:$koin_version"
+    // Koin Test features
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+
+    def koin_android_version= "3.3.0"
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:$koin_android_version"
+    // Java Compatibility
+    implementation "io.insert-koin:koin-android-compat:$koin_android_version"
+
+    // Retrofit
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 }
